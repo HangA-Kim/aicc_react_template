@@ -1,8 +1,16 @@
 :root {
   --ff-kr: "Noto Sans KR", sans-serif;
   --ff-en: "IBM plex Mono", monospace;
-  color-scheme: dark;
+  /* color-scheme: dark; */
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
 
 /* .App {
   font-size:30px;
