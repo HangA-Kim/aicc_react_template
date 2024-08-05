@@ -7,9 +7,11 @@ import Footer from './components/Footer';
 import { useSelector } from "react-redux";
 import { RootState } from './redux/store';
 import { darkTheme, lightTheme } from './theme/theme';
-import { ThemeProvider, Paper } from '@mui/material'
+import { ThemeProvider, Paper, Fab } from '@mui/material'
 import Signin from './components/Auth/Signin';
 import Signup from './components/Auth/Signup';
+import ScrollToTop from 'react-scroll-to-top';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 function App() {
   const theme = useSelector( (state:RootState) => state.theme)
@@ -36,6 +38,11 @@ function App() {
             <Route path='*' element={<div>ERR! 404</div>}/>
           </Routes>
           <Footer/>
+          <ScrollToTop smooth style={{background:'transparent'}} component={
+            <Fab size='small' color='secondary' aria-label='add'>
+              <KeyboardArrowUpIcon/>
+            </Fab>}
+          />
         </Paper>
       </BrowserRouter>
     </ThemeProvider>

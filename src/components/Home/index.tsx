@@ -1,6 +1,8 @@
 import React from 'react'
 import HeroSection from './HeroSection'
 import FeaturesSection from './FeaturesSection'
+import WorkFlow from './WorkFlow'
+import Pricing from './Pricing'
 
 
 const index = () => {
@@ -8,6 +10,8 @@ const index = () => {
     <div>
       <HeroSection/>
       <FeaturesSection/>
+      <WorkFlow/>
+      <Pricing/>
     </div>
   )
 }
