@@ -8,7 +8,7 @@ import { globalSize } from '../../theme/globalSize';
 import { globalColors } from '../../theme/globalColors';
 
 const Div = styled('div')(({ theme }) => ({
-  ...theme.typography.button,
+  // ...theme.typography.button,
   // backgroundColor: theme.palette.background.paper,
   padding: theme.spacing(1),
   color: globalColors.purple[500],

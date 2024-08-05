@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import Home from './components/Home'
 import Features from './components/Features'
 import NavBar from './components/NavBar';
@@ -25,17 +25,26 @@ function App() {
       document.body.style.color = lightTheme.palette.text.primary || '#000000'
     }
   }, [theme.darkTheme])
+
+  console.log('public ', process.env.PUBLIC_URL)
   return (
     <ThemeProvider theme={theme.darkTheme? darkTheme: lightTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      {/* <BrowserRouter> */}
         <Paper className="App">
           <NavBar/>
           <Routes>
-            <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<Home/>}/>
+            <Route path='/home' element={<Home/>}/>
             <Route path='/features' element={<Features/>}/>
             <Route path='/signin' element={<Signin/>}/>
             <Route path='/signup' element={<Signup/>}/>
             <Route path='*' element={<div>ERR! 404</div>}/>
+
+            {/* <Route path='/' element={<Navigate to="/aicc_react_template/home"/>}/>
+            <Route path='/home' element={<Navigate to="/aicc_react_template/home"/>}/>
+            <Route path='/features' element={<Navigate to="/aicc_react_template/features"/>}/>
+            <Route path='*' element={<Navigate to="/aicc_react_template/home"/>}/> */}
           </Routes>
           <Footer/>
           <ScrollToTop smooth style={{background:'transparent'}} component={

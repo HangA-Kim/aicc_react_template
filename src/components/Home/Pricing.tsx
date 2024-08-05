@@ -15,7 +15,7 @@ const Pricing = () => {
       <Typography fontSize={'50px'} fontWeight={'bold'} margin={'50px'}>
       Pricing
       </Typography>
-      <Grid container xs={12}>
+      <Grid container>
       {
         pricingOptions.map ( (item, idx) => (
           <Grid xs={4} key={idx}>

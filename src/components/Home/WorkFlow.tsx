@@ -18,7 +18,7 @@ const WorkFlow = () => {
         <Grid container>
         {
           checklistItems.map( (item, idx) => (
-            <div>
+            <div key={idx}>
               <Stack direction={'row'}>
                 <Avatar sx={{bgcolor: '#111', color:'green'}}>
                   <CheckCircle2/>

@@ -2,7 +2,7 @@ import {
   Stack, 
   Divider, 
   useMediaQuery, 
-  Link, } from '@mui/material'
+   } from '@mui/material'
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import { authLink, navItems } from '../constants/data';
 import ModeCtrl from './ModeCtrl';
@@ -13,6 +13,8 @@ import { RootState } from '../redux/store';
 import NavBarMenu from './NavBarMenu';
 import { CustomBox } from '../styles/CustomBox.style';
 import { globalSize } from '../theme/globalSize';
+import { Link } from 'react-router-dom';
+import { globalColors } from '../theme/globalColors';
 
 
 const NavBar = () => {
@@ -35,8 +37,10 @@ const NavBar = () => {
             navItems.map( (item, idx) =>(
               <Link 
                 key={idx}
-                href={item.to} 
-                sx={{marginLeft:'10px', fontSize:'18px'}}>{item.label}
+                to={item.to} 
+                style={{marginLeft:'10px', 
+                fontSize:'18px', textDecoration:'none',
+                color:theme.darkTheme?globalColors.White:globalColors.Black}}>{item.label}
               </Link>
             ))
           }
@@ -50,7 +54,9 @@ const NavBar = () => {
                   isdark={theme.darkTheme?'true':'false'}
                   className={isMobile?hiddenStyle['hidden']:hiddenStyle['visible']}>
                 <Link 
-                  href={item.to}> 
+                  to={item.to}
+                  style={{ textDecoration:'none',
+                    color:theme.darkTheme?globalColors.White:globalColors.Black}}> 
                     {item.label} 
                 </Link>
                 </CustomBox>
